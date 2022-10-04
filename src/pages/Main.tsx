@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import Nav from '../components/Nav';
+import styled from "styled-components";
+import Nav from "../components/Nav";
+import ThemeList from "../components/PageOne/ThemeList";
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
         <span>Play</span>keyboard
       </StyledTitle>
       <Nav />
+      <ThemeList />
     </>
   );
 };
