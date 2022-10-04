@@ -1,5 +1,11 @@
+import Nav from '../components/Nav';
+
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <>
+      <Nav />
+    </>
+  );
 };
 
 export default Main;
