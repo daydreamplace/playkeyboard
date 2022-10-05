@@ -38,6 +38,10 @@ const Theme = ({ data }: ThemeProps) => {
 };
 
 const ThemeBox = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+
   img {
     width: 100%;
 
@@ -60,16 +64,21 @@ const ThemeBox = styled.div`
     ul {
       display: flex;
       justify-content: flex-start;
+      /* white-space: nowrap; */
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
 
       .hashTag {
-        margin-right: 5px;
+        margin-right: 3px;
+        white-space: nowrap;
+        /* overflow: hidden; */
+        /* text-overflow: ellipsis; */
 
-        font-weight: 400;
         font-size: 14px;
+        /* font-size: 1.2rem; */
+        font-weight: 400;
         line-height: 18px;
-        color: #aaabb3;
-
-        opacity: 1;
+        color: rgb(170, 171, 179);
       }
     }
 
