@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { HiArrowCircleDown } from "react-icons/hi";
-import { IoDiamond } from "react-icons/io5";
+import styled from 'styled-components';
+import { HiArrowCircleDown } from 'react-icons/hi';
+import { IoDiamond } from 'react-icons/io5';
 
 interface ThemeProps {
   data: any;
@@ -12,20 +12,20 @@ const Theme = ({ data }: ThemeProps) => {
   return (
     <ThemeBox>
       <img src={data.imageUrl} alt={data.name} />
-      <div className="themeContent">
-        <p className="themeName">{data.name}</p>
-        {hashtag.map((tag) => {
+      <div className='themeContent'>
+        <p className='themeName'>{data.name}</p>
+        {hashtag.map(tag => {
           return (
             <li key={tag.id}>
-              <span className="hashTag">#{tag}</span>
+              <span className='hashTag'>#{tag}</span>
             </li>
           );
         })}
-        <div className="bottom">
-          <div className="download">
+        <div className='bottom'>
+          <div className='download'>
             <HiArrowCircleDown /> {data.downloads}
           </div>
-          <div className="price">
+          <div className='price'>
             <IoDiamond /> {data.price}
           </div>
         </div>
