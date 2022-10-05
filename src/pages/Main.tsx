@@ -5,6 +5,7 @@ import Nav from '../components/Nav';
 import { ThemeInfo, ThemeRes } from '../interface';
 import { BsSearch } from 'react-icons/bs';
 import ThemeItem from '../components/ThemeList';
+import Footer from '../components/Footer';
 
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>();
@@ -29,6 +30,7 @@ const Main = () => {
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav curCategory={curCategory} setCurCategory={setCurCategory} />
       {list && <ThemeItem themeList={list} />}
+      <Footer />
     </>
   );
 };
