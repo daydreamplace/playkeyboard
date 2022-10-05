@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <>
       <StyledTitle>
-        <span>Play</span>keyboard
+        <span>Play</span>keyboard 😊😍😉🤣
       </StyledTitle>
       <Nav />
     </>
