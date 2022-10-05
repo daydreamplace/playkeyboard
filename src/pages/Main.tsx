@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { ThemeInfo, ThemeRes } from '../interface';
 import { BsSearch } from 'react-icons/bs';
-import ThemeItem from '../components/ThemeList';
+// import ThemeItem from '../components/ThemeList';
 
 import Nav from '../components/Nav';
 import ThemeList from '../components/PageOne/ThemeList';
