@@ -8,9 +8,11 @@ import { categotyToKor } from '../utils/categoryToKor';
 interface NavProps {
   curCategory: string;
   setCurCategory: React.Dispatch<React.SetStateAction<string>>;
+
+  setLimit: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Nav = ({ curCategory, setCurCategory }: NavProps) => {
+const Nav = ({ curCategory, setCurCategory, setLimit }: NavProps) => {
   const [categories, setCategories] = useState<string[]>();
 
   useEffect(() => {
@@ -29,7 +31,10 @@ const Nav = ({ curCategory, setCurCategory }: NavProps) => {
             <SwiperSlide
               key={category} //
               className={curCategory === category ? 'current' : ''}
-              onClick={() => setCurCategory(category)}
+              onClick={() => {
+                setCurCategory(category);
+                setLimit(8);
+              }}
             >
               <p>{categotyToKor(category)}</p>
             </SwiperSlide>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import charge from '../assets/images/Footer/ic_nav_charge_disabled.png';
 import { FooterInfo, FooterRes } from '../interface';
 
-function Footer() {
+const Footer = () => {
   const [footer, setFooter] = useState<FooterInfo[]>();
   const [iconNumber, setIconNumber] = useState(2);
 
@@ -40,7 +40,7 @@ function Footer() {
       </Container>
     </Wrapper>
   );
-}
+};
 
 let Wrapper = styled.div`
   width: 100%;

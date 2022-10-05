@@ -10,13 +10,35 @@ import Footer from '../components/Footer';
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>();
   const [curCategory, setCurCategory] = useState('NEW');
+  const [limit, setLimit] = useState(8);
 
-  useEffect(() => {
+  /*useEffect(() => {
     (async () => {
       const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
       setList(data.data.slice(0, 8));
     })();
-  }, [curCategory]);
+  }, [curCategory]);*/
+
+  const showMore = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight) {
+      setLimit(current => current + 8);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', showMore);
+    (async () => {
+      const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
+      setList(data.data.slice(0, limit));
+    })();
+    return () => {
+      window.addEventListener('scroll', showMore);
+    };
+  }, [curCategory, limit]);
 
   return (
     <>
@@ -28,7 +50,7 @@ const Main = () => {
       </Header>
 
       <StyledTitle>취향대로 골라보기</StyledTitle>
-      <Nav curCategory={curCategory} setCurCategory={setCurCategory} />
+      <Nav curCategory={curCategory} setCurCategory={setCurCategory} setLimit={setLimit} />
       {list && <ThemeItem themeList={list} />}
       <Footer />
     </>
