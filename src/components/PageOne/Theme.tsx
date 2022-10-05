@@ -47,6 +47,9 @@ const ThemeBox = styled.div`
 
   .themeContent {
     .themeName {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
@@ -59,6 +62,8 @@ const ThemeBox = styled.div`
       justify-content: flex-start;
 
       .hashTag {
+        margin-right: 5px;
+
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;
