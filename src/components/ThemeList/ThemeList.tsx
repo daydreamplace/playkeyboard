@@ -74,7 +74,7 @@ const ThemeList = () => {
 const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   margin-top: 16px;
   padding: 0 16px;
 

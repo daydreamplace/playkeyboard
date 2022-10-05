@@ -57,7 +57,7 @@ const ThemeBox = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 20px;
 
       color: #42444c;
@@ -75,8 +75,8 @@ const ThemeBox = styled.div`
         margin-right: 3px;
         padding: 1px;
 
-        font-size: 14px;
-        /* font-size: 1.1rem; */
+        /* font-size: 14px; */
+        font-size: 0.8rem;
         font-weight: 400;
         line-height: 18px;
       }
@@ -91,7 +91,7 @@ const ThemeBox = styled.div`
         align-items: center;
 
         font-weight: 500;
-        font-size: 12px;
+        font-size: 0.7rem;
         line-height: 18px;
 
         color: #aaabb3;
@@ -102,7 +102,7 @@ const ThemeBox = styled.div`
         align-items: center;
 
         font-weight: 500;
-        font-size: 12px;
+        font-size: 0.7rem;
         line-height: 18px;
 
         color: #7dc9fc;
