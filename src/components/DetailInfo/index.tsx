@@ -23,6 +23,7 @@ const DetailInfo = () => {
     <Box>
       <Back />
       {detailData && <Info detailData={detailData} />}
+      
     </Box>
   );
 };
