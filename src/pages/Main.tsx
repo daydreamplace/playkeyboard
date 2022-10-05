@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 // import ThemeItem from '../components/ThemeList';
 
 import Nav from '../components/Nav';
-import ThemeList from '../components/PageOne/ThemeList';
+import ThemeList from '../components/ThemeList/ThemeList';
 
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>();

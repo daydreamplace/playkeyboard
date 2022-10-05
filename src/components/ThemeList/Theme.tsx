@@ -23,7 +23,6 @@ const Theme = ({ data }: ThemeProps) => {
             );
           })}
         </ul>
-
         <div className='bottom'>
           <div className='download'>
             <HiArrowCircleDown /> {data.downloads}
@@ -65,24 +64,21 @@ const ThemeBox = styled.div`
     }
 
     ul {
-      display: flex;
-      justify-content: flex-start;
-      /* white-space: nowrap; */
+      white-space: nowrap;
       overflow: hidden;
-      /* text-overflow: ellipsis; */
+      text-overflow: ellipsis;
+      color: rgb(170, 171, 179);
 
       .hashTag {
+        display: inline;
+
         margin-right: 3px;
         padding: 1px;
-        white-space: nowrap;
-        /* overflow: hidden; */
-        /* text-overflow: ellipsis; */
 
         font-size: 14px;
-        /* font-size: 1.2rem; */
+        /* font-size: 1.1rem; */
         font-weight: 400;
         line-height: 18px;
-        color: rgb(170, 171, 179);
       }
     }
 
