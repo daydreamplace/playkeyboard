@@ -51,6 +51,8 @@ const ThemeBox = styled.div`
 
   .themeContent {
     .themeName {
+      padding: 1px;
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -70,6 +72,7 @@ const ThemeBox = styled.div`
 
       .hashTag {
         margin-right: 3px;
+        padding: 1px;
         white-space: nowrap;
         /* overflow: hidden; */
         /* text-overflow: ellipsis; */
