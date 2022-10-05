@@ -1,37 +1,35 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { ThemeDetailRes, ThemeDetail } from "../../interface";
 
 import Back from "./Back";
+import Info from "./Info";
 
-export default function DetailInfo() {
+const DetailInfo = () => {
 
-  // const getTheme = async () => {
-  //   try {
-  //     const response = await axios.get("https://api.plkey.app/theme/6");
-  //     const theme = response.data;
-  //     console.log(theme);
-  //   } catch (err) {
-  //     console.log("Error >>", err);
-  //   }
-  // };
+  const [detailData, setDetailData] = useState<ThemeDetail>();
 
   useEffect(() => {
-    axios.get('https://api.plkey.app/theme/6')
-    .then(res => console.log(res.data.data))
-    .catch(err => console.log('Error => ', err))
+    (async () => {
+      const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/6');
+      setDetailData(data.data);
+    })();
   }, []);
+
+  console.log(detailData);
 
   return (
     <Box>
       <Back />
+      {detailData && <Info detailData={detailData} />}
     </Box>
   );
-}
+};
 
 const Box = styled.div`
-  width: 100%;
-  height: 500px;
-  margin: 0 16px;
-  border: 1px solid red;
+  width: calc(100% - 32px);
+  margin: 0 calc((100% - (100% - 32px))/2);
 `;
+
+export default DetailInfo;
