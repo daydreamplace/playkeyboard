@@ -51,6 +51,7 @@ const ThemeBox = styled.div`
 
   .themeContent {
     .themeName {
+      margin-top: 4px;
       padding: 1px;
 
       white-space: nowrap;
