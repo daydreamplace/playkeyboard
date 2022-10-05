@@ -17,8 +17,6 @@ const DetailInfo = () => {
     })();
   }, []);
 
-  console.log(detailData);
-
   return (
     <Box>
       <Back />
@@ -30,7 +28,9 @@ const DetailInfo = () => {
 
 const Box = styled.div`
   width: calc(100% - 32px);
-  margin: 0 calc((100% - (100% - 32px))/2);
+  max-width: 600px;
+  margin: 0 auto;
+  /* margin: 0 calc((100% - (100% - 32px))/2); */
 `;
 
 export default DetailInfo;

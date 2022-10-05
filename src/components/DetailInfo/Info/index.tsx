@@ -43,6 +43,10 @@ const Name = styled.div`
     font-weight: 700;
     line-height: 28px;
     color: #42444c;
+
+    @media screen and (min-width: 500px) {
+      font-size: 24px;
+  }
   }
 `;
 
@@ -50,6 +54,11 @@ const Share = styled(FiShare)`
   width: 18px;
   height: 18px;
   color: #919299;
+
+  @media screen and (min-width: 500px) {
+    width: 30px;
+    height: 25px;
+  }
 `;
 
 const Creater = styled.p`
@@ -57,6 +66,11 @@ const Creater = styled.p`
   font-size: 12px;
   font-weight: 500;
   color: #919299;
+
+  @media screen and (min-width: 500px) {
+  font-size: 18px;
+  margin: 8px 0 17px;
+  }
 `;
 
 const HashTag = styled.span`
