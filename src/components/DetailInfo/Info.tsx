@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-
 import { ThemeDetail } from '../../interface';
 
+import styled from 'styled-components';
 import { FiShare } from 'react-icons/fi';
 
 interface TitleProps {
@@ -46,7 +45,7 @@ const Name = styled.div`
 
     @media screen and (min-width: 500px) {
       font-size: 24px;
-  }
+    }
   }
 `;
 
@@ -68,8 +67,8 @@ const Creater = styled.p`
   color: #919299;
 
   @media screen and (min-width: 500px) {
-  font-size: 18px;
-  margin: 8px 0 17px;
+    font-size: 18px;
+    margin: 8px 0 17px;
   }
 `;
 

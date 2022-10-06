@@ -1,21 +1,40 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import Nav from '../components/Nav';
 import { ThemeInfo, ThemeRes } from '../interface';
+
+import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
 import ThemeItem from '../components/ThemeList';
+import Footer from '../components/Footer';
+
+import Nav from '../components/Nav';
+import ThemeList from '../components/ThemeList';
 
 const Main = () => {
-  const [list, setList] = useState<ThemeInfo[]>();
+  const [list, setList] = useState<ThemeInfo[]>([]);
   const [curCategory, setCurCategory] = useState('NEW');
+  const [limit, setLimit] = useState(8);
+
+  const showMore = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight) {
+      setLimit(limit + 8);
+    }
+  };
 
   useEffect(() => {
+    window.addEventListener('scroll', showMore);
     (async () => {
       const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
-      setList(data.data.slice(0, 8));
+      setList(data.data.slice(0, limit));
     })();
-  }, [curCategory]);
+    return () => {
+      window.removeEventListener('scroll', showMore);
+    };
+  }, [curCategory, limit]);
 
   return (
     <>
@@ -25,10 +44,10 @@ const Main = () => {
         </h1>
         <BsSearch size={24} />
       </Header>
-
       <StyledTitle>취향대로 골라보기</StyledTitle>
-      <Nav curCategory={curCategory} setCurCategory={setCurCategory} />
-      {list && <ThemeItem themeList={list} />}
+      <Nav curCategory={curCategory} setCurCategory={setCurCategory} setLimit={setLimit} />
+      <ThemeList list={list} />
+      <Footer />
     </>
   );
 };

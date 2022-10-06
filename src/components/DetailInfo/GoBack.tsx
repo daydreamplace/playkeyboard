@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { HiArrowLeft } from 'react-icons/hi';
 
 const goBack = () => {
@@ -16,10 +16,14 @@ const goBack = () => {
 };
 
 const Box = styled.div`
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 40px;
+  width: 105%;
+  height: 50px;
+  padding-left: 16px;
+  background: #fff;
 
   @media screen and (min-width: 500px) {
     height: 60px;

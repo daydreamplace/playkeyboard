@@ -14,7 +14,7 @@ const List = ({ listData }: ListProps) => {
       <Ad>AD</Ad>
       <CardList>
         {figure.map(fig => (
-          <li key={fig.text}>
+          <li key={fig.keyword}>
             <img src={fig.imageUrl} />
           </li>
         ))}
