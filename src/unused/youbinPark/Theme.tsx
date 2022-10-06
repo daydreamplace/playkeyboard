@@ -1,8 +1,7 @@
-import { ThemeInfo } from '../../interface';
-
 import styled from 'styled-components';
 import { HiArrowCircleDown } from 'react-icons/hi';
 import { IoDiamond } from 'react-icons/io5';
+import { ThemeInfo } from '../../interface';
 
 interface ThemeProps {
   data: ThemeInfo;

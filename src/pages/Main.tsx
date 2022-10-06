@@ -1,15 +1,15 @@
-import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { ThemeInfo, ThemeRes } from '../interface';
+
+import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
-// import ThemeItem from '../components/ThemeList';
 
 import Nav from '../components/Nav';
 import ThemeList from '../components/ThemeList/ThemeList';
 
 const Main = () => {
-  const [list, setList] = useState<ThemeInfo[]>();
+  const [list, setList] = useState<ThemeInfo[]>([]);
   const [curCategory, setCurCategory] = useState('NEW');
 
   useEffect(() => {
@@ -27,11 +27,9 @@ const Main = () => {
         </h1>
         <BsSearch size={24} />
       </Header>
-
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav curCategory={curCategory} setCurCategory={setCurCategory} />
-      {/* {list && <ThemeItem themeList={list} />} */}
-      <ThemeList />
+      <ThemeList list={list} />
     </>
   );
 };
