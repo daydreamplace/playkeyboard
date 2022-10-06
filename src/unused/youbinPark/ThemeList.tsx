@@ -1,4 +1,5 @@
-import { ThemeInfo } from '../interface';
+import { ThemeInfo } from '../../interface';
+
 import styled from 'styled-components';
 
 import Theme from './Theme';
@@ -26,21 +27,25 @@ const ThemeList = ({ list }: ThemeListProps) => {
 const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 32px);
-  margin: 0 auto;
+  gap: 10px;
+  min-width: 320px;
   margin-top: 16px;
+  padding: 0 10px;
 
   li {
-    width: 47%;
-    margin: 0 calc(6% / 4);
-    margin-bottom: 10px;
+    /* width: calc(50% - 10px); */
+    width: 20rem;
   }
 
-  @media (min-width: 500px) {
+  @media (max-width: 1280px) {
     li {
-      width: 32%;
-      margin: 0 calc(4% / 6);
-      margin-bottom: 10px;
+      width: calc(33.33% - 14px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    li {
+      width: calc(50% - 10px);
     }
   }
 `;
