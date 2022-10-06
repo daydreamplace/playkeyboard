@@ -12,13 +12,6 @@ const Main = () => {
   const [curCategory, setCurCategory] = useState('NEW');
   const [limit, setLimit] = useState(8);
 
-  /*useEffect(() => {
-    (async () => {
-      const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
-      setList(data.data.slice(0, 8));
-    })();
-  }, [curCategory]);*/
-
   const showMore = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
