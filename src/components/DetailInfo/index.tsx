@@ -10,6 +10,7 @@ import Bottom from './Bottom';
 import NotFound from '../NotFound';
 import styled from 'styled-components';
 import DetailSkeleton from './DetailSkeleton';
+import Figure from '../../unused/sanghoU/Figure';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
@@ -35,6 +36,7 @@ const DetailInfo = () => {
           {detailData ? (
             <>
               <Info detailData={detailData} />
+              <Figure figureData={detailData.figure} />
               <Bottom priceData={detailData.price} />
             </>
           ) : (
