@@ -27,10 +27,10 @@ const Theme = ({ data }: ThemeProps) => {
         </ul>
         <div className='bottom'>
           <div className='download'>
-            <img src={download} /> {data.downloads}
+            <img alt='download' src={download} /> {data.downloads}
           </div>
           <div className='price'>
-            <img src={zem} /> {data.price}
+            <img alt='zem' src={zem} /> {data.price}
           </div>
         </div>
       </div>
