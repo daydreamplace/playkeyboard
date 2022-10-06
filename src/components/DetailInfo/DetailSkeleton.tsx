@@ -19,6 +19,8 @@ const DetailSkeleton = () => {
 };
 
 const StyledSkeleton = styled.div`
+  padding: 63px 16px 0 16px;
+
   div.img {
     aspect-ratio: 48 / 37;
     background-color: gray;

@@ -47,7 +47,6 @@ const ThemeBox = styled(Link)`
 
   .theme {
     width: 100%;
-
     box-shadow: 2px 2px lightgray;
     border-radius: 10px;
   }
