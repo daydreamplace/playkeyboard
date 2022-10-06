@@ -1,11 +1,13 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
+
 import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
+import NotFound from '../NotFound';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
@@ -13,8 +15,8 @@ const DetailInfo = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/6');
-      // const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
+      // const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/7');
+      const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
       setDetailData(data.data);
     })();
   }, []);
@@ -22,10 +24,12 @@ const DetailInfo = () => {
   return (
     <Box>
       <GoBack />
-      {detailData && (
+      {detailData ? (
         <>
           <Info detailData={detailData} />
         </>
+      ) : (
+        <NotFound />
       )}
     </Box>
   );
