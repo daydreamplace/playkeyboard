@@ -20,18 +20,12 @@ const DetailInfo = () => {
     })();
   }, []);
 
+  console.log(detailData);
+
   return (
     <DetailBox>
       <GoBack />
-      <Box>
-        {detailData ? (
-          <>
-            <Info detailData={detailData} />
-          </>
-        ) : (
-          <NotFound />
-        )}
-      </Box>
+      <Box>{detailData ? <Info detailData={detailData} /> : <NotFound />}</Box>
     </DetailBox>
   );
 };
