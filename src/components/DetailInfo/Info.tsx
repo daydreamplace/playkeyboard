@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ThemeDetail } from '../../../interface';
+import { ThemeDetail } from '../../interface';
 
 import { FiShare } from 'react-icons/fi';
 

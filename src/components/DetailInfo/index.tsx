@@ -1,13 +1,12 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { ThemeDetailRes, ThemeDetail } from "../../interface";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
-import Back from "./Back";
-import Info from "./Info";
+import GoBack from './GoBack';
+import Info from './Info';
 
 const DetailInfo = () => {
-
   const [detailData, setDetailData] = useState<ThemeDetail>();
 
   useEffect(() => {
@@ -19,9 +18,12 @@ const DetailInfo = () => {
 
   return (
     <Box>
-      <Back />
-      {detailData && <Info detailData={detailData} />}
-      
+      <GoBack />
+      {detailData && (
+        <>
+          <Info detailData={detailData} />
+        </>
+      )}
     </Box>
   );
 };

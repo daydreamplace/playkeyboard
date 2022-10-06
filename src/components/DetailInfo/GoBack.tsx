@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 import { HiArrowLeft } from 'react-icons/hi';
 
-const Back = () => {
+const goBack = () => {
   const navigate = useNavigate();
 
-  const goBack = () => navigate('/');
+  const goBackBtn = () => navigate('/');
 
   return (
     <Box>
-      <ArrowLeft onClick={goBack} />
+      <ArrowLeft onClick={goBackBtn} />
     </Box>
   );
 };
@@ -36,4 +36,4 @@ const ArrowLeft = styled(HiArrowLeft)`
   }
 `;
 
-export default Back;
+export default goBack;
