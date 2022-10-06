@@ -1,19 +1,21 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import Nav from '../components/Nav';
 import { ThemeInfo, ThemeRes } from '../interface';
+
+import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
-import ThemeItem from '../components/ThemeList';
+
+import Nav from '../components/Nav';
+import ThemeList from '../components/ThemeList';
 
 const Main = () => {
-  const [list, setList] = useState<ThemeInfo[]>();
+  const [list, setList] = useState<ThemeInfo[]>([]);
   const [curCategory, setCurCategory] = useState('NEW');
 
   useEffect(() => {
     (async () => {
       const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
-      setList(data.data.slice(0, 8));
+      setList(data.data);
     })();
   }, [curCategory]);
 
@@ -25,10 +27,9 @@ const Main = () => {
         </h1>
         <BsSearch size={24} />
       </Header>
-
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav curCategory={curCategory} setCurCategory={setCurCategory} />
-      {list && <ThemeItem themeList={list} />}
+      <ThemeList list={list} />
     </>
   );
 };

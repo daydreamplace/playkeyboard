@@ -16,7 +16,6 @@ const Nav = ({ curCategory, setCurCategory }: NavProps) => {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get<CategoryResponse>('https://api.plkey.app/theme/category');
-
       setCategories(data.data);
     })();
   }, []);
