@@ -9,9 +9,10 @@ import dia from '../assets/images/dia.png';
 
 const Theme = () => {
   const { id } = useParams();
-  const [count, setCount] = useState([0, 0, 0, 0]);
+  const [count, setCount] = useState(0);
   const [focus, setFocus] = useState(0);
   const [on, setOn] = useState(false);
+
   type EmojiArr = { id: number; emojiImg: any; alt: string; title: string; count: number };
   let emojiArr: EmojiArr[];
 
@@ -21,30 +22,34 @@ const Theme = () => {
       emojiImg: smile,
       alt: '맘에들어요',
       title: '맘에들어요',
-      count: count[0],
+      count: 0,
     },
     {
       id: 2,
       emojiImg: love,
       alt: '심쿵했어요',
       title: '심쿵했어요',
-      count: count[1],
+      count: 0,
     },
     {
       id: 3,
       emojiImg: wink,
       alt: '응원해요',
       title: '응원해요',
-      count: count[2],
+      count: 0,
     },
     {
       id: 4,
       emojiImg: laugh,
       alt: '갖고싶어요',
       title: '갖고싶어요',
-      count: count[3],
+      count: 0,
     },
   ];
+
+  const selectTabHandler = (index: number) => {
+    setCount(index);
+  };
 
   const selectEmojiHandler = (e: number) => {
     setFocus(e);
@@ -58,11 +63,10 @@ const Theme = () => {
             <li
               className={focus === el.id ? 'focus-on' : 'focus-off'}
               key={el.id}
-              value={el.id}
-              onClick={e => {
+              onClick={() => {
                 selectEmojiHandler(el.id);
+                console.log(el.id);
               }}
-              onChange={e => {}}
             >
               <img alt={el.alt} src={el.emojiImg} />
               <div className='emoji-title'>{el.title}</div>
@@ -131,7 +135,7 @@ const StyledSection = styled.section`
   }
 
   .line {
-    width: 320px;
+    width: 100%;
     margin: 20px 0;
     border-bottom: 1px solid #f2f3f7;
   }
