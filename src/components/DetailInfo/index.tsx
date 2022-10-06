@@ -6,6 +6,7 @@ import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
+import Theme from '../../pages/Theme';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
@@ -25,6 +26,7 @@ const DetailInfo = () => {
       {detailData && (
         <>
           <Info detailData={detailData} />
+          <Theme />
         </>
       )}
     </Box>

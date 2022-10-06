@@ -9,14 +9,9 @@ import dia from '../assets/images/dia.png';
 
 const Theme = () => {
   const { id } = useParams();
-  const [count, setCount] = useState(0);
   const [focus, setFocus] = useState(0);
   const [on, setOn] = useState(false);
-
-  type EmojiArr = { id: number; emojiImg: any; alt: string; title: string; count: number };
-  let emojiArr: EmojiArr[];
-
-  emojiArr = [
+  const [emojiArr, setEmojiArr] = useState([
     {
       id: 1,
       emojiImg: smile,
@@ -45,11 +40,7 @@ const Theme = () => {
       title: '갖고싶어요',
       count: 0,
     },
-  ];
-
-  const selectTabHandler = (index: number) => {
-    setCount(index);
-  };
+  ]);
 
   const selectEmojiHandler = (e: number) => {
     setFocus(e);
@@ -65,12 +56,11 @@ const Theme = () => {
               key={el.id}
               onClick={() => {
                 selectEmojiHandler(el.id);
-                console.log(el.id);
               }}
             >
               <img alt={el.alt} src={el.emojiImg} />
               <div className='emoji-title'>{el.title}</div>
-              <div>{el.count ? 1 : 0}</div>
+              <div>{focus === el.id ? 1 : 0}</div>
             </li>
           );
         })}
@@ -96,21 +86,11 @@ const Theme = () => {
 const StyledSection = styled.section`
   padding-top: 30px;
   width: 100%;
-  min-width: 320px;
-  max-width: 600px;
 
   .emoji-wrap {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
-    .focus-off {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 12px;
-      color: #919299;
-    }
 
     .focus-off {
       display: flex;
@@ -147,7 +127,7 @@ const StyledSection = styled.section`
     justify-content: center;
   }
   .inquiry-btn {
-    width: 300px;
+    width: 100%;
     margin: 0 10px;
     padding: 3px 0;
     background: #ffffff;
@@ -165,10 +145,10 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid #f2f3f7;
 
     .purchase-btn {
-      width: 300px;
+      width: 100%;
       margin: 10px;
       padding: 5px 0;
       background: #ff417d;
