@@ -13,7 +13,7 @@ import ThemeList from '../components/ThemeList';
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>([]);
   const [curCategory, setCurCategory] = useState('NEW');
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(15);
 
   const showMore = () => {
     const scrollHeight = document.documentElement.scrollHeight;
