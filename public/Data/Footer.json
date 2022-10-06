@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "disabled_imgUrl": "images/Footer/ic_nav_store_disabled.png",
+      "imgUrl": "images/Footer/ic_nav_store.png",
+      "title": "스토어"
+    },
+    {
+      "id": 1,
+      "disabled_imgUrl": "images/Footer/ic_nav_charge_disabled.png",
+      "imgUrl": "images/Footer/ic_nav_charge.png",
+      "title": "충전소"
+    },
+    {
+      "id": 2,
+      "disabled_imgUrl": "images/Footer/ic_nav_mytheme_disabled.png",
+      "imgUrl": "images/Footer/ic_nav_mytheme.png",
+      "title": "MY테마"
+    },
+    {
+      "id": 3,
+      "disabled_imgUrl": "images/Footer/ic_nav_setting_disabled.png",
+      "imgUrl": "images/Footer/setting.png",
+      "title": "설정"
+    }
+  ]
+}
