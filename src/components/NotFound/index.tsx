@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-
 import notFound from '../../assets/notfound/404.png';
+
+import styled from 'styled-components';
 
 const NotFound = () => {
   return (

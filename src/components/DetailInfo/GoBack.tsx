@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 import { HiArrowLeft } from 'react-icons/hi';
 
 const goBack = () => {

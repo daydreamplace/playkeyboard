@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components';
 
 import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
 import NotFound from '../NotFound';
+
+import styled from 'styled-components';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
