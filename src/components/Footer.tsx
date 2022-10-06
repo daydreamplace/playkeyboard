@@ -33,7 +33,7 @@ const Footer = () => {
                 }}
               >
                 {iconNumber === data.id ? <img src={data.imgUrl}></img> : <img src={data.disabled_imgUrl}></img>}
-                <Title>{data.title}</Title>
+                {iconNumber === data.id ? <Title>{data.title}</Title> : <ColoredTitle>{data.title}</ColoredTitle>}
               </Box>
             );
           })}
@@ -64,5 +64,11 @@ let Title = styled.div`
   margin-top: 3.95px;
   font-size: 10px;
   color: #919299;
+`;
+
+let ColoredTitle = styled.div`
+  margin-top: 3.95px;
+  font-size: 10px;
+  color: #ff1c7c;
 `;
 export default Footer;

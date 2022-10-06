@@ -25,7 +25,7 @@ const Main = () => {
     const clientHeight = document.documentElement.clientHeight;
 
     if (scrollTop + clientHeight >= scrollHeight) {
-      setLimit(current => current + 8);
+      setLimit(limit + 8);
     }
   };
 
@@ -36,7 +36,7 @@ const Main = () => {
       setList(data.data.slice(0, limit));
     })();
     return () => {
-      window.addEventListener('scroll', showMore);
+      window.removeEventListener('scroll', showMore);
     };
   }, [curCategory, limit]);
 
