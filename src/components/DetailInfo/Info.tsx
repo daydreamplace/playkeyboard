@@ -11,7 +11,7 @@ const Info = ({ detailData }: TitleProps) => {
   const { imageUrl, name, creator, hashtag } = detailData;
 
   return (
-    <>
+    <StyledContainer>
       <Img src={imageUrl} alt={name} />
       <Name>
         <h1>{name}</h1>
@@ -21,9 +21,15 @@ const Info = ({ detailData }: TitleProps) => {
       {hashtag.map(tag => (
         <HashTag key={tag}>{tag}</HashTag>
       ))}
-    </>
+    </StyledContainer>
   );
 };
+
+const StyledContainer = styled.div`
+  max-width: 600px;
+  padding: 16px;
+  margin: 47px auto 0 auto;
+`;
 
 const Img = styled.img`
   width: 100%;

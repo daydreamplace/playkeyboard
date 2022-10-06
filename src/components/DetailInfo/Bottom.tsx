@@ -88,6 +88,8 @@ const StyledSection = styled.section`
 
   .emojiWrap {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
 
@@ -125,10 +127,12 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
   }
+
   .inquiryBtn {
     width: 100%;
-    margin: 0 10px;
-    padding: 3px 0;
+    max-width: 600px;
+    margin: 0 16px;
+    padding: 3px;
     background: #ffffff;
     border: 3px solid #ff417d;
     border-radius: 20px;
@@ -141,14 +145,16 @@ const StyledSection = styled.section`
   .purchaseBox {
     margin-top: 20px;
     display: flex;
+    padding: 0 16px;
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 30%);
 
     .purchaseBtn {
       width: 100%;
-      margin: 10px;
+      max-width: 600px;
+      margin: 10px auto;
       padding: 5px 0;
       background: #ff417d;
       border: none;
