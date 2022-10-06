@@ -166,9 +166,11 @@ const StyledSection = styled.section`
         font-size: 14px;
 
         .dia {
+          width: 15px;
+          height: 15px;
           margin-left: 4px;
           margin-right: 3px;
-          vertical-align: middle;
+          vertical-align: text-top;
         }
 
         div {
