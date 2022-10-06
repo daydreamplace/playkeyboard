@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ThemeInfo } from '../interface';
 import styled from 'styled-components';
 
@@ -12,8 +13,8 @@ const Theme = ({ data }: ThemeProps) => {
   const hashtag = data.hashtag;
 
   return (
-    <ThemeBox>
-      <img src={data.imageUrl} className='theme' alt={data.name} />
+    <ThemeBox to={`/theme/${data.themeId}`}>
+      <img src={data.imageUrl} className='theme lazyload blur-up' alt={data.name} />
       <div className='themeContent'>
         <p className='themeName'>{data.name}</p>
         <ul>
@@ -38,7 +39,8 @@ const Theme = ({ data }: ThemeProps) => {
   );
 };
 
-const ThemeBox = styled.div`
+const ThemeBox = styled(Link)`
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
@@ -53,7 +55,6 @@ const ThemeBox = styled.div`
   .themeContent {
     .themeName {
       margin-top: 4px;
-      padding: 1px;
 
       white-space: nowrap;
       overflow: hidden;
@@ -73,9 +74,7 @@ const ThemeBox = styled.div`
 
       .hashTag {
         display: inline;
-
-        margin-right: 3px;
-        padding: 1px;
+        margin: 0 3px 0 0;
 
         font-size: 0.875rem;
         font-weight: 400;
