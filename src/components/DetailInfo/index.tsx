@@ -15,16 +15,15 @@ const DetailInfo = () => {
 
   useEffect(() => {
     (async () => {
-      // const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/7');
       const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
       setDetailData(data.data);
     })();
   }, []);
 
   return (
-    <>
-      <Box>
+    <DetailBox>
       <GoBack />
+      <Box>
         {detailData ? (
           <>
             <Info detailData={detailData} />
@@ -33,16 +32,24 @@ const DetailInfo = () => {
           <NotFound />
         )}
       </Box>
-    </>
+    </DetailBox>
   );
 };
 
-const Box = styled.div`
+const DetailBox = styled.div`
   position: relative;
-  width: calc(100% - 32px);
   max-width: 600px;
   margin: 0 auto;
+`;
+
+const Box = styled.div`
+  width: calc(100% - 32px);
+  margin: 57px auto 0 auto;
   /* margin: 0 calc((100% - (100% - 32px))/2); */
+
+  @media screen and (min-width: 500px) {
+    margin: 67px auto 0 auto;
+  }
 `;
 
 export default DetailInfo;
