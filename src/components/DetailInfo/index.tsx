@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
@@ -8,10 +9,12 @@ import Info from './Info';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
+  const location = useLocation();
 
   useEffect(() => {
     (async () => {
       const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/6');
+      // const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
       setDetailData(data.data);
     })();
   }, []);
