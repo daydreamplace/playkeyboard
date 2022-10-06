@@ -55,7 +55,6 @@ const ThemeBox = styled(Link)`
   .themeContent {
     .themeName {
       margin-top: 4px;
-      padding: 1px;
 
       white-space: nowrap;
       overflow: hidden;
@@ -75,9 +74,7 @@ const ThemeBox = styled(Link)`
 
       .hashTag {
         display: inline;
-
-        margin-right: 3px;
-        padding: 1px;
+        margin: 0 3px 0 0;
 
         font-size: 0.875rem;
         font-weight: 400;
