@@ -16,10 +16,13 @@ const goBack = () => {
 };
 
 const Box = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   width: 100%;
   height: 40px;
+  background: #fff;
 
   @media screen and (min-width: 500px) {
     height: 60px;

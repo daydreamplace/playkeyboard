@@ -15,7 +15,6 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: calc(100vh - 40px);
-  /* border: 1px solid red; */
 `;
 
 const Img = styled.img`

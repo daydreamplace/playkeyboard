@@ -22,20 +22,23 @@ const DetailInfo = () => {
   }, []);
 
   return (
-    <Box>
+    <>
+      <Box>
       <GoBack />
-      {detailData ? (
-        <>
-          <Info detailData={detailData} />
-        </>
-      ) : (
-        <NotFound />
-      )}
-    </Box>
+        {detailData ? (
+          <>
+            <Info detailData={detailData} />
+          </>
+        ) : (
+          <NotFound />
+        )}
+      </Box>
+    </>
   );
 };
 
 const Box = styled.div`
+  position: relative;
   width: calc(100% - 32px);
   max-width: 600px;
   margin: 0 auto;
