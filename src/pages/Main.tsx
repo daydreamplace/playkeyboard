@@ -47,6 +47,7 @@ const Main = () => {
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav curCategory={curCategory} setCurCategory={setCurCategory} setLimit={setLimit} />
       <ThemeList list={list} />
+      <Footer />
     </>
   );
 };
