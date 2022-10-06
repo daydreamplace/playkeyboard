@@ -109,3 +109,14 @@ export interface ThemeDetail {
 export interface ThemeDetailRes {
   data: ThemeDetail;
 }
+
+export interface FooterInfo {
+  id: number;
+  disabled_imgUrl: string;
+  imgUrl: string;
+  title: string;
+}
+
+export interface FooterRes {
+  data: FooterInfo[];
+}

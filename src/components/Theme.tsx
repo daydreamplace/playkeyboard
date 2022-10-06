@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ThemeInfo } from '../interface';
 import styled from 'styled-components';
 
@@ -12,7 +13,7 @@ const Theme = ({ data }: ThemeProps) => {
   const hashtag = data.hashtag;
 
   return (
-    <ThemeBox>
+    <ThemeBox to={`/theme/${data.themeId}`}>
       <img src={data.imageUrl} className='theme' alt={data.name} />
       <div className='themeContent'>
         <p className='themeName'>{data.name}</p>
@@ -38,7 +39,8 @@ const Theme = ({ data }: ThemeProps) => {
   );
 };
 
-const ThemeBox = styled.div`
+const ThemeBox = styled(Link)`
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
