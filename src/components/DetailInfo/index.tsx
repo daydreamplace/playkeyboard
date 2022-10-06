@@ -6,10 +6,11 @@ import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
-import Bottom from './bottom';
+import Bottom from './Bottom';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
+  const [priceData, setPriceData] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ const DetailInfo = () => {
       const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/6');
       // const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
       setDetailData(data.data);
+      setPriceData(data.data.price);
     })();
   }, []);
 
@@ -26,7 +28,7 @@ const DetailInfo = () => {
       {detailData && (
         <>
           <Info detailData={detailData} />
-          <Bottom />
+          <Bottom priceData={priceData} />
         </>
       )}
     </Box>

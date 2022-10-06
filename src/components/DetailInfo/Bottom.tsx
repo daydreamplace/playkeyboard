@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ThemeDetail } from '../../interface';
 import styled from 'styled-components';
-import smile from '../assets/images/emoji/smile.png';
-import love from '../assets/images/emoji/love.png';
-import wink from '../assets/images/emoji/wink.png';
-import laugh from '../assets/images/emoji/laugh.png';
-import dia from '../assets/images/dia.png';
+import smile from '../../assets/images/emoji/smile.png';
+import love from '../../assets/images/emoji/love.png';
+import wink from '../../assets/images/emoji/wink.png';
+import laugh from '../../assets/images/emoji/laugh.png';
+import dia from '../../assets/images/dia.png';
 
-const Bottom = () => {
+interface PriceProps {
+  priceData: number;
+}
+
+const Bottom = ({ priceData }: PriceProps) => {
   const [focus, setFocus] = useState(0);
   const [on, setOn] = useState(false);
   const [emojiArr, setEmojiArr] = useState([
@@ -39,10 +44,7 @@ const Bottom = () => {
       count: 0,
     },
   ]);
-
-  const selectEmojiHandler = (e: number) => {
-    setFocus(e);
-  };
+  const selectEmojiHandler = (e: number) => (e === focus ? setFocus(0) : setFocus(e));
 
   return (
     <StyledSection>
@@ -72,7 +74,7 @@ const Bottom = () => {
           <div className='purchase-title'>
             <span>구매</span>
             <img alt='다이아' src={dia} className='dia' />
-            <span>7{/* 데이터의 price 값 */}</span>
+            <span>{priceData}</span>
           </div>
           <div className='purchase-ad'>광고제거·무제한 사용</div>
         </button>
@@ -143,7 +145,7 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    border-top: 1px solid #f2f3f7;
+    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.3);
 
     .purchase-btn {
       width: 100%;
