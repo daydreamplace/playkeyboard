@@ -30,7 +30,18 @@ const DetailInfo = () => {
   return (
     <DetailBox>
       <GoBack />
-      {!error && <Box>{detailData ? <Info detailData={detailData} /> : <DetailSkeleton />}</Box>}
+      {!error && (
+        <Box>
+          {detailData ? (
+            <>
+              <Info detailData={detailData} />
+              <Bottom priceData={detailData.price} />
+            </>
+          ) : (
+            <DetailSkeleton />
+          )}
+        </Box>
+      )}
       {error && <NotFound />}
     </DetailBox>
   );
@@ -38,13 +49,11 @@ const DetailInfo = () => {
 
 const DetailBox = styled.div`
   position: relative;
-  max-width: 600px;
   margin: 0 auto;
 `;
 
 const Box = styled.div`
-  width: calc(100% - 32px);
-  margin: 57px auto 0 auto;
+  width: 100%;
 
   @media screen and (min-width: 500px) {
     margin: 67px auto 0 auto;
