@@ -86,19 +86,15 @@ const StyledSection = styled.section`
   padding-top: 30px;
   width: 100%;
 
-  @mixin flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .emoji-wrap {
     width: 100%;
     display: flex;
     justify-content: space-around;
 
     .focus-off {
-      @include flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       font-size: 12px;
       color: #919299;
     }
