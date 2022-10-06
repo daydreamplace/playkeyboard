@@ -19,7 +19,10 @@ const DetailSkeleton = () => {
 };
 
 const StyledSkeleton = styled.div`
-  padding: 63px 16px 0 16px;
+  padding: 10px 16px 0 16px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 
   div.img {
     aspect-ratio: 48 / 37;
