@@ -14,7 +14,7 @@ const Theme = ({ data }: ThemeProps) => {
 
   return (
     <ThemeBox to={`/theme/${data.themeId}`}>
-      <img src={data.imageUrl} className='theme' alt={data.name} />
+      <img src={data.imageUrl} className='theme lazyload blur-up' alt={data.name} />
       <div className='themeContent'>
         <p className='themeName'>{data.name}</p>
         <ul>
