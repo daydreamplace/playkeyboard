@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
 
 import Nav from '../components/Nav';
-import ThemeList from '../components/ThemeList/ThemeList';
+import ThemeList from '../components/ThemeList';
 
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>([]);

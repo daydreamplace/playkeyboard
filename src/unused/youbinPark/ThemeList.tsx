@@ -27,13 +27,17 @@ const ThemeList = ({ list }: ThemeListProps) => {
 const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   min-width: 320px;
   margin-top: 16px;
-  padding: 0 16px;
+  padding: 0 10px;
 
   li {
-    width: calc(50% - 10px);
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
+
+    :nth-child(odd) {
+      margin-right: 10px;
+    }
   }
 `;
 

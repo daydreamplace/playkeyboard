@@ -1,4 +1,4 @@
-import { ThemeInfo } from '../../interface';
+import { ThemeInfo } from '../interface';
 
 import styled from 'styled-components';
 import { HiArrowCircleDown } from 'react-icons/hi';

@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 import Nav from './Nav';
 import ThemeList from './ThemeList';
 import { useLocation } from 'react-router-dom';
-// import { api } from '../../api/client';
+import { api } from '../../api/client';
 
 const Main = () => {
   const location = useLocation();
@@ -62,7 +62,6 @@ const Main = () => {
 
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav categories={categories} />
-      {/* {list && <ThemeItem themeList={list} />} */}
       <ThemeList list={list} />
     </>
   );
