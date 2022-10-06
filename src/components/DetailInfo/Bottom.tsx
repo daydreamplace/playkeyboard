@@ -47,35 +47,35 @@ const Bottom = ({ priceData }: PriceProps) => {
 
   return (
     <StyledSection>
-      <ul className='emoji-wrap'>
-        {emojiArr.map((el, index) => {
+      <ul className='emojiWrap'>
+        {emojiArr.map(el => {
           return (
             <li
-              className={focus === el.id ? 'focus-on' : 'focus-off'}
+              className={focus === el.id ? 'focusOn' : 'focusOff'}
               key={el.id}
               onClick={() => {
                 selectEmojiHandler(el.id);
               }}
             >
               <img alt={el.alt} src={el.emojiImg} />
-              <div className='emoji-title'>{el.title}</div>
+              <div className='emojiTitle'>{el.title}</div>
               <div>{focus === el.id ? 1 : 0}</div>
             </li>
           );
         })}
       </ul>
       <div className='line' />
-      <div className='inquiry-box'>
-        <button className='inquiry-btn'>상품 문의</button>
+      <div className='inquiryBox'>
+        <button className='inquiryBtn'>상품 문의</button>
       </div>
-      <div className='purchase-box'>
-        <button className='purchase-btn'>
-          <div className='purchase-title'>
+      <div className='purchaseBox'>
+        <button className='purchaseBtn'>
+          <div className='purchaseTitle'>
             <span>구매</span>
             <img alt='다이아' src={dia} className='dia' />
             <span>{priceData}</span>
           </div>
-          <div className='purchase-ad'>광고제거·무제한 사용</div>
+          <div className='purchaseAd'>광고제거·무제한 사용</div>
         </button>
       </div>
     </StyledSection>
@@ -86,12 +86,14 @@ const StyledSection = styled.section`
   padding-top: 30px;
   width: 100%;
 
-  .emoji-wrap {
+  .emojiWrap {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
 
-    .focus-off {
+    .focusOff {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -99,7 +101,7 @@ const StyledSection = styled.section`
       color: #919299;
     }
 
-    .focus-on {
+    .focusOn {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -107,7 +109,7 @@ const StyledSection = styled.section`
       color: #ff417d;
     }
 
-    .emoji-title {
+    .emojiTitle {
       margin-top: 8px;
       margin-bottom: 4px;
     }
@@ -119,16 +121,18 @@ const StyledSection = styled.section`
     border-bottom: 1px solid #f2f3f7;
   }
 
-  .inquiry-box {
+  .inquiryBox {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .inquiry-btn {
+
+  .inquiryBtn {
     width: 100%;
-    margin: 0 10px;
-    padding: 3px 0;
+    max-width: 600px;
+    margin: 0 16px;
+    padding: 3px;
     background: #ffffff;
     border: 3px solid #ff417d;
     border-radius: 20px;
@@ -138,31 +142,35 @@ const StyledSection = styled.section`
     color: #ff417d;
   }
 
-  .purchase-box {
+  .purchaseBox {
     margin-top: 20px;
     display: flex;
+    padding: 0 16px;
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 4px 0px rgb(0 0 0 / 30%);
 
-    .purchase-btn {
+    .purchaseBtn {
       width: 100%;
-      margin: 10px;
+      max-width: 600px;
+      margin: 10px auto;
       padding: 5px 0;
       background: #ff417d;
       border: none;
       border-radius: 30px;
       color: #ffffff;
 
-      .purchase-title {
+      .purchaseTitle {
         font-weight: 700;
         font-size: 14px;
 
         .dia {
+          width: 15px;
+          height: 15px;
           margin-left: 4px;
           margin-right: 3px;
-          vertical-align: middle;
+          vertical-align: text-top;
         }
 
         div {

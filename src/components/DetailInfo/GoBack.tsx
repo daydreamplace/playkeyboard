@@ -10,7 +10,9 @@ const goBack = () => {
 
   return (
     <Box>
-      <ArrowLeft onClick={goBackBtn} />
+      <div className='container'>
+        <ArrowLeft onClick={goBackBtn} />
+      </div>
     </Box>
   );
 };
@@ -20,10 +22,16 @@ const Box = styled.div`
   top: 0;
   display: flex;
   align-items: center;
-  width: 105%;
+  width: 100%;
   height: 50px;
-  padding-left: 16px;
   background: #fff;
+
+  div.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 16px;
+  }
 
   @media screen and (min-width: 500px) {
     height: 60px;

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { ThemeInfo } from '../interface';
 import styled from 'styled-components';
 
-import download from '../assets/download.png';
-import zem from '../assets/zem.png';
+import download from '../assets/images/download.png';
+import dia from '../assets/images/dia.png';
 
 interface ThemeProps {
   data: ThemeInfo;
@@ -31,7 +31,7 @@ const Theme = ({ data }: ThemeProps) => {
             <img alt='download' src={download} /> {data.downloads}
           </div>
           <div className='price'>
-            <img alt='zem' src={zem} /> {data.price}
+            <img alt='dia' src={dia} /> {data.price}
           </div>
         </div>
       </div>
@@ -47,7 +47,6 @@ const ThemeBox = styled(Link)`
 
   .theme {
     width: 100%;
-
     box-shadow: 2px 2px lightgray;
     border-radius: 10px;
   }

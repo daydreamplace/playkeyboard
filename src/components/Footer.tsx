@@ -17,7 +17,6 @@ const Footer = () => {
 
   const handleOnClick = (event: number) => {
     setIconNumber(event);
-    console.log(event);
   };
 
   return (
@@ -53,6 +52,8 @@ let Wrapper = styled.div`
 
 let Container = styled.div`
   width: 82%;
+  padding: 7px 16px 0 16px;
+  max-width: 600px;
   margin: auto;
   display: flex;
   justify-content: space-between;

@@ -2,18 +2,20 @@ import styled from 'styled-components';
 
 import { ThemeDetail } from '../../interface';
 
-interface ListProps {
-  listData: ThemeDetail;
+interface FigureProps {
+  figureData: {
+    keyword: string;
+    text: string;
+    imageUrl: string;
+  }[];
 }
 
-const List = ({ listData }: ListProps) => {
-  const { figure } = listData;
-
+const List = ({ figureData }: FigureProps) => {
   return (
-    <>
+    <Wrapper>
       <Ad>AD</Ad>
       <CardList>
-        {figure.map(fig => (
+        {figureData.map(fig => (
           <li key={fig.keyword}>
             <img src={fig.imageUrl} />
           </li>
@@ -24,24 +26,38 @@ const List = ({ listData }: ListProps) => {
         <p>이모티콘으로 전송될 수 있어요.</p>
         <p>이모티콘은 어떻게 전송하나요?</p>
       </Explain>
-    </>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  max-width: 600px;
+  margin: auto;
+`;
+
 const Ad = styled.section`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 25px;
-  margin: 20px 10px;
+  margin: 20px;
   background-color: #d9d9d9;
 `;
 
 const CardList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   padding: 15px;
 
   li {
-    width: calc(35% - 10px);
+    width: calc(50%);
+  }
+
+  @media (min-width: 500px) {
+    li {
+      width: calc(100% / 3);
+    }
   }
 
   img {
@@ -57,6 +73,7 @@ const Explain = styled.p`
   color: #919299;
   font-size: 15px;
   padding: 20px;
+  margin-top: 30px;
   line-height: 180%;
 
   p {
