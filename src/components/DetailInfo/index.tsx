@@ -20,8 +20,6 @@ const DetailInfo = () => {
     })();
   }, []);
 
-  console.log(detailData);
-
   return (
     <DetailBox>
       <GoBack />
