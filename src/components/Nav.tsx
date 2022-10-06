@@ -56,7 +56,11 @@ const fadeOut = keyframes`
 
 const StyledNav = styled.nav`
   position: sticky;
-  top: 60px;
+  top: 54px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
   z-index: 30;
   font-weight: 500;
   font-size: 16px;
