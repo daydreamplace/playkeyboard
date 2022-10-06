@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-
 import { ThemeDetail } from '../../interface';
 
+import styled from 'styled-components';
 import { FiShare } from 'react-icons/fi';
 
 interface TitleProps {
