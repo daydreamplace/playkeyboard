@@ -6,8 +6,8 @@ import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
+import Bottom from './Bottom';
 import NotFound from '../NotFound';
-
 import styled from 'styled-components';
 import DetailSkeleton from './DetailSkeleton';
 
