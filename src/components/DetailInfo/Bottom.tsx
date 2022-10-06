@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { ThemeDetail } from '../../interface';
+import { useState } from 'react';
 import styled from 'styled-components';
 import smile from '../../assets/images/emoji/smile.png';
 import love from '../../assets/images/emoji/love.png';
@@ -87,15 +86,19 @@ const StyledSection = styled.section`
   padding-top: 30px;
   width: 100%;
 
+  @mixin flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .emoji-wrap {
     width: 100%;
     display: flex;
     justify-content: space-around;
 
     .focus-off {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex;
       font-size: 12px;
       color: #919299;
     }
