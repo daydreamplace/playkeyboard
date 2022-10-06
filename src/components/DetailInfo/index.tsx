@@ -9,41 +9,51 @@ import Info from './Info';
 import Bottom from './Bottom';
 import NotFound from '../NotFound';
 import styled from 'styled-components';
+import DetailSkeleton from './DetailSkeleton';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
-  const [priceData, setPriceData] = useState(0);
+  const [error, setError] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
-      setDetailData(data.data);
-      setPriceData(data.data.price);
+      try {
+        const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
+        setDetailData(data.data);
+      } catch (error) {
+        setError(true);
+      }
     })();
   }, []);
 
   return (
     <DetailBox>
       <GoBack />
-      <Box>
-        {detailData ? <Info detailData={detailData} /> : <NotFound />}
-        <Bottom priceData={priceData} />
-      </Box>
+      {!error && (
+        <Box>
+          {detailData ? (
+            <>
+              <Info detailData={detailData} />
+              <Bottom priceData={detailData.price} />
+            </>
+          ) : (
+            <DetailSkeleton />
+          )}
+        </Box>
+      )}
+      {error && <NotFound />}
     </DetailBox>
   );
 };
 
 const DetailBox = styled.div`
   position: relative;
-  max-width: 600px;
   margin: 0 auto;
 `;
 
 const Box = styled.div`
-  width: calc(100% - 32px);
-  margin: 57px auto 0 auto;
-  /* margin: 0 calc((100% - (100% - 32px))/2); */
+  width: 100%;
 
   @media screen and (min-width: 500px) {
     margin: 67px auto 0 auto;
