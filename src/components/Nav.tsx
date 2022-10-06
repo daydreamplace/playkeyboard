@@ -32,7 +32,7 @@ const Nav = ({ curCategory, setCurCategory, setLimit }: NavProps) => {
               className={curCategory === category ? 'current' : ''}
               onClick={() => {
                 setCurCategory(category);
-                setLimit(8);
+                setLimit(15);
               }}
             >
               <p>{categotyToKor(category)}</p>
