@@ -61,6 +61,7 @@ const StyledNav = styled.nav`
   font-weight: 500;
   font-size: 16px;
   overflow: hidden;
+  background-color: white;
 
   div.swiper {
     padding: 0 20px;
