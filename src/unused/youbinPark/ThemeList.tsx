@@ -27,16 +27,25 @@ const ThemeList = ({ list }: ThemeListProps) => {
 const List = styled.ol`
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   min-width: 320px;
   margin-top: 16px;
   padding: 0 10px;
 
   li {
-    width: calc(50% - 5px);
-    margin-bottom: 10px;
+    /* width: calc(50% - 10px); */
+    width: 20rem;
+  }
 
-    :nth-child(odd) {
-      margin-right: 10px;
+  @media (max-width: 1280px) {
+    li {
+      width: calc(33.33% - 14px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    li {
+      width: calc(50% - 10px);
     }
   }
 `;

@@ -1,21 +1,17 @@
-import axios from 'axios';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { CategoryResponse } from '../interface';
-import { categotyToKor } from '../utils/categoryToKor';
+import { categotyToKor } from '../../utils/categoryToKor';
 
 interface NavProps {
-  // curCategory: string;
   categories: string[];
-  // setCurCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Nav = ({ categories }: NavProps) => {
   const location = useLocation();
   const navigate = useNavigate();
-  // const [categories, setCategories] = useState<string[]>();
+
   const curCategory = useMemo(() => {
     if (!location.search) return categories[0];
     const url = new URLSearchParams(location.search);
@@ -27,29 +23,15 @@ const Nav = ({ categories }: NavProps) => {
     navigate(`/?category=${category}`);
   };
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const { data } = await axios.get<CategoryResponse>('https://api.plkey.app/theme/category');
-
-  //     setCategories(data.data);
-  //   })();
-  // }, []);
-
   return (
     <StyledNav>
-      {/* {categories && ( */}
       <Swiper slidesPerView={'auto'} spaceBetween={14}>
         {categories.map(category => (
-          <SwiperSlide
-            key={category} //
-            className={curCategory === category ? 'current' : ''}
-            onClick={() => onClick(category)}
-          >
+          <SwiperSlide key={category} className={curCategory === category ? 'current' : ''} onClick={() => onClick(category)}>
             <p>{categotyToKor(category)}</p>
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* )} */}
     </StyledNav>
   );
 };

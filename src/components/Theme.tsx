@@ -1,8 +1,8 @@
 import { ThemeInfo } from '../interface';
-
 import styled from 'styled-components';
-import { HiArrowCircleDown } from 'react-icons/hi';
-import { IoDiamond } from 'react-icons/io5';
+
+import download from '../assets/download.png';
+import zem from '../assets/zem.png';
 
 interface ThemeProps {
   data: ThemeInfo;
@@ -13,7 +13,7 @@ const Theme = ({ data }: ThemeProps) => {
 
   return (
     <ThemeBox>
-      <img src={data.imageUrl} alt={data.name} />
+      <img src={data.imageUrl} className='theme' alt={data.name} />
       <div className='themeContent'>
         <p className='themeName'>{data.name}</p>
         <ul>
@@ -27,10 +27,10 @@ const Theme = ({ data }: ThemeProps) => {
         </ul>
         <div className='bottom'>
           <div className='download'>
-            <HiArrowCircleDown /> {data.downloads}
+            <img src={download} /> {data.downloads}
           </div>
           <div className='price'>
-            <IoDiamond /> {data.price}
+            <img src={zem} /> {data.price}
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ const ThemeBox = styled.div`
     cursor: pointer;
   }
 
-  img {
+  .theme {
     width: 100%;
 
     box-shadow: 2px 2px lightgray;
@@ -88,23 +88,33 @@ const ThemeBox = styled.div`
       justify-content: space-between;
 
       .download {
+        img {
+          width: 0.75rem;
+          margin-right: 3px;
+        }
+
         display: flex;
         align-items: center;
 
         font-weight: 500;
-        font-size: 0.7rem;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1rem;
 
         color: #aaabb3;
       }
 
       .price {
+        img {
+          width: 0.75rem;
+          margin-right: 3px;
+        }
+
         display: flex;
         align-items: center;
 
         font-weight: 500;
-        font-size: 0.7rem;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1rem;
 
         color: #7dc9fc;
       }

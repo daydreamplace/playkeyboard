@@ -15,7 +15,7 @@ const Main = () => {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get<ThemeRes>(`https://api.plkey.app/theme?category=${curCategory}`);
-      setList(data.data.slice(0, 8));
+      setList(data.data);
     })();
   }, [curCategory]);
 
