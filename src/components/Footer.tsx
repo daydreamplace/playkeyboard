@@ -17,7 +17,6 @@ const Footer = () => {
 
   const handleOnClick = (event: number) => {
     setIconNumber(event);
-    console.log(event);
   };
 
   return (

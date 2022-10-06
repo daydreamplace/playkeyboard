@@ -29,6 +29,7 @@ const List = styled.ol`
   width: calc(100% - 32px);
   margin: 0 auto;
   margin-top: 16px;
+  margin-bottom: 60px;
 
   li {
     width: 47%;
