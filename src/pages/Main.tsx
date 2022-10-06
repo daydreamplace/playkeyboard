@@ -13,7 +13,7 @@ import ThemeList from '../components/ThemeList';
 const Main = () => {
   const [list, setList] = useState<ThemeInfo[]>([]);
   const [curCategory, setCurCategory] = useState('NEW');
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(15);
 
   const showMore = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -39,10 +39,12 @@ const Main = () => {
   return (
     <>
       <Header>
-        <h1>
-          <span>PLAY</span>keyboard
-        </h1>
-        <BsSearch size={24} />
+        <div className='container'>
+          <h1>
+            <span>PLAY</span>keyboard
+          </h1>
+          <BsSearch size={24} />
+        </div>
       </Header>
       <StyledTitle>취향대로 골라보기</StyledTitle>
       <Nav curCategory={curCategory} setCurCategory={setCurCategory} setLimit={setLimit} />
@@ -60,12 +62,20 @@ const Header = styled.header`
   font-size: 24px;
   color: #42444c;
   font-weight: 500;
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: white;
+
+  div.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
   span {
     color: #ff1c7c;
@@ -74,11 +84,13 @@ const Header = styled.header`
 `;
 
 const StyledTitle = styled.h2`
-  padding-top: 64px;
   font-size: 24px;
   color: #42444c;
   font-weight: 500;
-  margin: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 64px 20px 0 20px;
 `;
 
 export default Main;

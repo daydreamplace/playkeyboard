@@ -32,7 +32,7 @@ const Nav = ({ curCategory, setCurCategory, setLimit }: NavProps) => {
               className={curCategory === category ? 'current' : ''}
               onClick={() => {
                 setCurCategory(category);
-                setLimit(8);
+                setLimit(15);
               }}
             >
               <p>{categotyToKor(category)}</p>
@@ -55,9 +55,17 @@ const fadeOut = keyframes`
 `;
 
 const StyledNav = styled.nav`
+  position: sticky;
+  top: 54px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  z-index: 30;
   font-weight: 500;
   font-size: 16px;
   overflow: hidden;
+  background-color: white;
 
   div.swiper {
     padding: 0 20px;
