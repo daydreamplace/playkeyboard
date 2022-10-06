@@ -18,7 +18,7 @@ const DetailInfo = () => {
       const { data } = await axios.get<ThemeDetailRes>('https://api.plkey.app/theme/6');
       // const { data } = await axios.get<ThemeDetailRes>(`https://api.plkey.app${location.pathname}`);
       setDetailData(data.data);
-      setListData(data.data);
+      setListData(data.data); //
     })();
   }, []);
 

@@ -27,7 +27,7 @@ const List = ({ listData }: ListProps) => {
     </>
   );
 };
-const Ad = styled.div`
+const Ad = styled.section`
   display: flex;
   justify-content: center;
   padding: 25px;
@@ -47,10 +47,6 @@ const CardList = styled.ul`
   img {
     width: 100%;
     cursor: pointer;
-  }
-
-  @media screen and (min-width: 500px) {
-    width: calc(25%);
   }
 `;
 
