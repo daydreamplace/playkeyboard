@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import GlobalStyle from './GlobalStyle';
 import Main from './pages/Main';
-import Theme from './pages/Theme';
 import DetailInfo from './components/DetailInfo';
 
 const App = () => {
@@ -10,8 +9,7 @@ const App = () => {
       <GlobalStyle />
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/theme/:id' element={<Theme />} />
-        <Route path='/asd' element={<DetailInfo />} />
+        <Route path='/theme/:id' element={<DetailInfo />} />
       </Routes>
     </>
   );
