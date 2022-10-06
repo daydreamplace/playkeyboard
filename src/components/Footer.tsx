@@ -33,7 +33,7 @@ const Footer = () => {
                 }}
               >
                 {iconNumber === data.id ? <img src={data.imgUrl}></img> : <img src={data.disabled_imgUrl}></img>}
-                {iconNumber === data.id ? <Title>{data.title}</Title> : <ColoredTitle>{data.title}</ColoredTitle>}
+                {iconNumber === data.id ? <ColoredTitle>{data.title}</ColoredTitle> : <Title>{data.title}</Title>}
               </Box>
             );
           })}
@@ -46,6 +46,9 @@ let Wrapper = styled.div`
   width: 100%;
   padding-top: 7px;
   box-shadow: 0px -1px 4px 0px rgb(0 0 0 / 8%);
+  position: fixed;
+  bottom: 0px;
+  background-color: #fff;
 `;
 
 let Container = styled.div`
