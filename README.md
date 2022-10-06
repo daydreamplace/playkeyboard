@@ -109,7 +109,7 @@ npm run dev
 
 <br/>
 
-> 김슬기 - 라이브테마의 boolean값에 따라 UI가 다르게 나오도록 구현
+> 김슬기 - AD 및 figure UI 구현, 반응형 구현
 > <br/>
 
 > 김충만 -
