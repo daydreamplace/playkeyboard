@@ -6,14 +6,15 @@ import { ThemeDetailRes, ThemeDetail } from '../../interface';
 
 import GoBack from './GoBack';
 import Info from './Info';
+import List from './List';
 import Bottom from './Bottom';
 import NotFound from '../NotFound';
 import styled from 'styled-components';
 import DetailSkeleton from './DetailSkeleton';
-import Figure from '../../unused/sanghoU/Figure';
 
 const DetailInfo = () => {
   const [detailData, setDetailData] = useState<ThemeDetail>();
+  const [priceData, setPriceData] = useState(0);
   const [error, setError] = useState(false);
   const location = useLocation();
 
@@ -36,7 +37,7 @@ const DetailInfo = () => {
           {detailData ? (
             <>
               <Info detailData={detailData} />
-              <Figure figureData={detailData.figure} />
+              <List figureData={detailData.figure} />
               <Bottom priceData={detailData.price} />
             </>
           ) : (
