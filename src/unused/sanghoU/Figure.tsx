@@ -43,6 +43,7 @@ const AD = styled.button`
   margin: 10px 0;
   border: none;
   background: #d9d9d9;
+  color: #000000;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
