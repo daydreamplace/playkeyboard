@@ -37,7 +37,7 @@ const DetailInfo = () => {
           {detailData ? (
             <>
               <Info detailData={detailData} />
-              <List figureData={detailData.figure} />
+              <List figureData={detailData.figure} isLiveTheme={detailData.isLiveTheme} />
               <Bottom priceData={detailData.price} />
             </>
           ) : (
