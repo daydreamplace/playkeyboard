@@ -61,7 +61,7 @@ const CardList = styled.div`
   }
 `;
 
-const Text = styled.p`
+const Text = styled.span`
   display: block;
   width: 77%;
   margin: 40px auto 0 auto;
