@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { ThemeDetail } from '../../interface';
-
 interface FigureProps {
   figureData: {
     keyword: string;
@@ -16,7 +14,7 @@ const List = ({ figureData }: FigureProps) => {
       <Ad>AD</Ad>
       <CardList>
         {figureData.map(fig => (
-          <li key={fig.keyword}>
+          <li key={fig.imageUrl}>
             <img src={fig.imageUrl} />
           </li>
         ))}
@@ -66,7 +64,7 @@ const CardList = styled.ul`
   }
 `;
 
-const Explain = styled.p`
+const Explain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
